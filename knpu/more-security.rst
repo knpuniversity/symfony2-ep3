@@ -695,6 +695,8 @@ a ``User`` and saved, the new events would be ignored. Only the main, or "owning
 side of the relationship is used when saving. In this example, this means that
 you should always call ``setOwner`` on an Event to establish the relationship.
 
+.. code-block:: php
+
     // src/Yoda/EventBundle/Controller/EventController.php
     // ...
 
