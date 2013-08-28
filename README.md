@@ -1,4 +1,4 @@
-Starting in Symfony2 - Episode 1
+Starting in Symfony2 - Episode 3
 ================================
 
 Well hallo there! Inside this archive, you'll find 2 things:
