@@ -122,12 +122,14 @@ Another important option is ``cascade``::
      */
     protected $owner;
 
-Setting this to ``remove`` tells Doctrine to remove all related events when
-a user is deleted. This is similar to the database-level cascade, except that
-it happens at the Doctrine level. If this doesn't totally make sense yet,
-don't worry young jedi - just be aware that these options exist. For more
-details on all of this, see the `Working with Associations`_ section of Doctrine's
-documentation.
+Setting this to ``remove`` tells Doctrine to "cascade" the removal of an
+Event down to the related User. In other words, when an Event id deleted,
+that delete should "cascade" through this relationship and also remove the
+User. This is similar to the database-level cascade, except that it happens
+at the Doctrine level operates in the opposite direction. If this doesn't
+totally make sense yet, don't worry young jedi - just be aware that these
+options exist. For more details on all of this, see the `Working with Associations`_
+section of Doctrine's documentation.
 
 Head to the console to update the schema:
 
