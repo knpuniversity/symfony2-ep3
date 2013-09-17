@@ -3,9 +3,8 @@ _something_super_duper_crazy:
 
 EventBundle_event:
     resource: "@EventBundle/Resources/config/routing/event.yml"
-    prefix:   /event
+    prefix:   /
 
-EventBundle_event_annotation:
-    resource: "@EventBundle/Controller"
-    prefix:   /event
-    type:     annotation
+event_report_updated_events:
+    pattern: /events/report/recentlyUpdated.csv
+    defaults: { _controller: EventBundle:Report:updatedEvents, _format: csv }

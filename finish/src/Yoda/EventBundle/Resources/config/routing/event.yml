@@ -1,5 +1,9 @@
+event:
+    pattern:  /
+    defaults: { _controller: "EventBundle:Event:index" }
+
 event_show:
-    pattern:  /{id}/show
+    pattern:  /{slug}/show
     defaults: { _controller: "EventBundle:Event:show" }
 
 event_new:
@@ -24,3 +28,15 @@ event_delete:
     pattern:  /{id}/delete
     defaults: { _controller: "EventBundle:Event:delete" }
     requirements: { _method: post }
+
+event_attend:
+    pattern:  /{id}/attend.{_format}
+    defaults: { _controller: "EventBundle:Event:attend", _format: html }
+    requirements:
+        _format: html|json
+
+event_unattend:
+    pattern:  /{id}/unattend.{_format}
+    defaults: { _controller: "EventBundle:Event:unattend", _format: html }
+    requirements:
+        _format: html|json

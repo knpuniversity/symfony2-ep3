@@ -1,0 +1,6 @@
+_something_super_duper_crazy:
+    resource: routing/default.yml
+
+EventBundle_event:
+    resource: "@EventBundle/Resources/config/routing/event.yml"
+    prefix:   /

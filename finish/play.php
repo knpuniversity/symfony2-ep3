@@ -20,26 +20,32 @@ $container->set('request', $request);
 
 // all our setup is done!!!!!!
 
-use Yoda\EventBundle\Entity\Event;
 
-$event = new Event();
-$event->setName('Darth\'s surprise birthday party');
-$event->setLocation('Deathstar');
-$event->setTime(new \DateTime('tomorrow noon'));
-$event->setDetails('Ha! Darth HATES surprises!!!!');
+$em = $container->get('doctrine')
+    ->getEntityManager()
+;
 
-$em = $container->get('doctrine')->getManager();
+/** @var $user \Yoda\UserBundle\Entity\User */
+$user = $em
+    ->getRepository('UserBundle:User')
+    ->findOneBy(array('username' => 'user'))
+;
+
+/** @var $event \Yoda\EventBundle\Entity\Event */
+$event = $em
+    ->getRepository('EventBundle:Event')
+    ->findOneBy(array('name' => 'Rebellion Fundraiser Bake Sale!'))
+;
+
+// this totally works!
+$event->setOwner($user);
+
+// does nothing :(
+$events = $user->getEvents();
+$events[] = $event;
+$user->setEvents($events);
+
+$em->persist($user);
 $em->persist($event);
 $em->flush();
-
-
-
-
-
-
-
-
-
-
-
 

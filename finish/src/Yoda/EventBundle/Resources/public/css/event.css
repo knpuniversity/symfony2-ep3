@@ -185,3 +185,6 @@
     float:left;
     width:510px;
 }
+.event-show .hidden {
+    display: none;
+}
