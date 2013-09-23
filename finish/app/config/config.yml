@@ -4,6 +4,11 @@ imports:
     - { resource: "@EventBundle/Resources/config/services.yml" }
     - { resource: "@UserBundle/Resources/config/services.yml" }
 
+services:
+    yoda_event.controller.exception_controller:
+        parent: twig.controller.exception
+        class:  Yoda\EventBundle\Controller\ExceptionController
+
 framework:
     #esi:             ~
     translator:      { fallback: %locale% }
@@ -24,7 +29,7 @@ framework:
 twig:
     debug:            %kernel.debug%
     strict_variables: %kernel.debug%
-    exception_controller: "EventBundle:Exception:show"
+    exception_controller: "yoda_event.controller.exception_controller:showAction"
 
 # Assetic Configuration
 assetic:
