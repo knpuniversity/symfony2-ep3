@@ -492,7 +492,7 @@ to add ``use`` statements for the three new classes::
     // src/EventBundle/Controller/ExceptionController.php
     // ...
 
-    use Symfony\Component\Debug\Exception\FlattenException;
+    use Symfony\Component\HttpKernel\Exception\FlattenException;
     use Symfony\Component\HttpKernel\Log\DebugLoggerInterface;
     use Symfony\Component\HttpFoundation\Request;
     // ...
