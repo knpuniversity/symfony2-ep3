@@ -70,7 +70,7 @@ setup as the special ``ArrayCollection`` objects::
     
     public function __construct()
     {
-        $this->events = new ArrayCollection();
+        $this->attendees = new ArrayCollection();
     }
 
 Usually, this is where we'd generate a getter and a setter. Instead, generate
