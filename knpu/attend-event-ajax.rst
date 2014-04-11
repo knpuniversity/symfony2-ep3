@@ -498,6 +498,10 @@ function::
     // src/Yoda/EventBundle/Controller/EventController.php
     // ...
 
+    /**
+     * @param bool $attending
+     * @return \Symfony\Component\HttpFoundation\Response
+     */
     private function createAttendingJson($attending)
     {
         $data = array(
