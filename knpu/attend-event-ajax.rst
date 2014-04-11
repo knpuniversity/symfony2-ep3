@@ -91,6 +91,10 @@ this event::
     // src/Yoda/EventBundle/Entity/Event.php
     // ...
 
+    /**
+     * @param \Yoda\UserBundle\Entity\User $user
+     * @return bool
+     */
     public function hasAttendee(User $user)
     {
         return $this->getAttendees()->contains($user);
