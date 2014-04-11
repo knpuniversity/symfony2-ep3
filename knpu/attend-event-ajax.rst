@@ -474,7 +474,7 @@ with a call to the ``getRequestFormat`` on the Request object::
     {
         // ...
 
-        if ($this->getRequest()->getRequestFormat() == 'json') {
+        if ($this->get('request_stack')->getCurrentRequest()->getRequestFormat() == 'json') {
             // create and return the json response
         }
 
@@ -518,7 +518,7 @@ We can use this function to easily generate the JSON response for both controlle
     {
         // ...
 
-        if ($this->getRequest()->getRequestFormat() == 'json') {
+        if ($this->get('request_stack')->getCurrentRequest()->getRequestFormat() == 'json') {
             return $this->createAttendingJson(true);
         }
 
@@ -529,7 +529,7 @@ We can use this function to easily generate the JSON response for both controlle
     {
         // ...
 
-        if ($this->getRequest()->getRequestFormat() == 'json') {
+        if ($this->get('request_stack')->getCurrentRequest()->getRequestFormat() == 'json') {
             return $this->createAttendingJson(false);
         }
 
