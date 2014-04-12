@@ -474,11 +474,11 @@ with a call to the ``getRequestFormat`` on the Request object::
     // src/Yoda/EventBundle/Controller/EventController.php
     // ...
 
-    public function attendAction($id)
+    public function attendAction(Request $request, $id)
     {
         // ...
 
-        if ($this->get('request_stack')->getCurrentRequest()->getRequestFormat() == 'json') {
+        if ($this->getRequest()->getRequestFormat() == 'json') {
             // create and return the json response
         }
 
@@ -522,22 +522,22 @@ We can use this function to easily generate the JSON response for both controlle
     // src/Yoda/EventBundle/Controller/EventController.php
     // ...
 
-    public function attendAction($id)
+    public function attendAction(Request $request, $id)
     {
         // ...
 
-        if ($this->get('request_stack')->getCurrentRequest()->getRequestFormat() == 'json') {
+        if ($this->getRequest()->getRequestFormat() == 'json') {
             return $this->createAttendingJson(true);
         }
 
         // ...
     }
 
-    public function unattendAction($id)
+    public function unattendAction(Request $request, $id)
     {
         // ...
 
-        if ($this->get('request_stack')->getCurrentRequest()->getRequestFormat() == 'json') {
+        if ($this->getRequest()->getRequestFormat() == 'json') {
             return $this->createAttendingJson(false);
         }
 
