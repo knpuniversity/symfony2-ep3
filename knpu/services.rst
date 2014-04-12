@@ -35,7 +35,7 @@ report of the recently-updated events::
             foreach ($events as $event) {
                 $data = array($event->getId(), $event->getName(), $event->getTime()->format('Y-m-d H:i:s'));
 
-                $rows[] implode(',', $data);
+                $rows[] = implode(',', $data);
             }
 
             $content = implode("\n", $rows);
