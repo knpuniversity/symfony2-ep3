@@ -321,7 +321,7 @@ To use it, use a special Twig "render" tag:
         {# ... #}
 
         <section class="events">
-            {% render 'EventBundle:Event:_upcomingEvents' %}
+            {% render controller('EventBundle:Event:_upcomingEvents') %}
         </section>
     {% endblock %}
 
