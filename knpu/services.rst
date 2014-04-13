@@ -145,7 +145,7 @@ of our report-generating logic from the controller into it::
             foreach ($events as $event) {
                 $data = array($event->getId(), $event->getName(), $event->getTime()->format('Y-m-d H:i:s'));
 
-                $rows[] implode(',', $data);
+                $rows[] = implode(',', $data);
             }
 
             return implode("\n", $rows);
