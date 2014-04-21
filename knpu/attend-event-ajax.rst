@@ -472,13 +472,14 @@ this, remove the ``$_format`` argument from your controller and replace it
 with a call to the ``getRequestFormat`` on the Request object::
 
     // src/Yoda/EventBundle/Controller/EventController.php
+    use Symfony\Component\HttpFoundation\Request;
     // ...
 
-    public function attendAction($id)
+    public function attendAction(Request $request, $id)
     {
         // ...
 
-        if ($this->getRequest()->getRequestFormat() == 'json') {
+        if ($request->getRequestFormat() == 'json') {
             // create and return the json response
         }
 
@@ -520,24 +521,25 @@ function::
 We can use this function to easily generate the JSON response for both controllers::
 
     // src/Yoda/EventBundle/Controller/EventController.php
+    use Symfony\Component\HttpFoundation\Request;
     // ...
 
-    public function attendAction($id)
+    public function attendAction(Request $request, $id)
     {
         // ...
 
-        if ($this->getRequest()->getRequestFormat() == 'json') {
+        if ($request->getRequestFormat() == 'json') {
             return $this->createAttendingJson(true);
         }
 
         // ...
     }
 
-    public function unattendAction($id)
+    public function unattendAction(Request $request, $id)
     {
         // ...
 
-        if ($this->getRequest()->getRequestFormat() == 'json') {
+        if ($request->getRequestFormat() == 'json') {
             return $this->createAttendingJson(false);
         }
 
