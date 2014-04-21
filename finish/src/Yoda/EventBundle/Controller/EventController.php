@@ -9,6 +9,7 @@ use Yoda\EventBundle\Form\EventType;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Symfony\Component\Security\Core\Exception\AccessDeniedException;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpFoundation\Request;
 
 /**
  * Event controller.
@@ -189,7 +190,7 @@ class EventController extends Controller
         return $this->redirect($this->generateUrl('event'));
     }
 
-    public function attendAction($id)
+    public function attendAction(Request $request, $id)
     {
         $em = $this->getDoctrine()->getManager();
         /** @var $event \Yoda\EventBundle\Entity\Event */
@@ -206,7 +207,7 @@ class EventController extends Controller
         $em->persist($event);
         $em->flush();
 
-        if ($this->getRequest()->getRequestFormat() == 'json') {
+        if ($request->getRequestFormat() == 'json') {
             return $this->createAttendingJson(true);
         }
 
@@ -215,7 +216,7 @@ class EventController extends Controller
         )));
     }
 
-    public function unattendAction($id)
+    public function unattendAction(Request $request, $id)
     {
         $em = $this->getDoctrine()->getManager();
         /** @var $event \Yoda\EventBundle\Entity\Event */
@@ -232,7 +233,7 @@ class EventController extends Controller
         $em->persist($event);
         $em->flush();
 
-        if ($this->getRequest()->getRequestFormat() == 'json') {
+        if ($request->getRequestFormat() == 'json') {
             return $this->createAttendingJson(false);
         }
 
