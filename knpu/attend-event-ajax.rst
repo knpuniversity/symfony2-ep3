@@ -474,7 +474,7 @@ with a call to the ``getRequestFormat`` on the Request object::
     // src/Yoda/EventBundle/Controller/EventController.php
     // ...
 
-    public function attendAction($id)
+    public function attendAction(Request $request, $id)
     {
         // ...
 
@@ -522,7 +522,7 @@ We can use this function to easily generate the JSON response for both controlle
     // src/Yoda/EventBundle/Controller/EventController.php
     // ...
 
-    public function attendAction($id)
+    public function attendAction(Request $request, $id)
     {
         // ...
 
@@ -533,7 +533,7 @@ We can use this function to easily generate the JSON response for both controlle
         // ...
     }
 
-    public function unattendAction($id)
+    public function unattendAction(Request $request, $id)
     {
         // ...
 
