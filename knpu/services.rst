@@ -267,7 +267,7 @@ it needs, it can get its work done.
 .. tip::
 
     To learn more, check out out free tutorial that's all about the great
-    topic of :doc:`Dependency Injection</screencast/dependency-injection/index>`.
+    topic of :doc:`Dependency Injection</screencast/dependency-injection>`.
 
 In addition to "dependency injection", we've also just created our first "service".
 That's right - a "service" is nothing more than a term that's loosely given
