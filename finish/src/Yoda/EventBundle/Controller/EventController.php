@@ -2,8 +2,6 @@
 
 namespace Yoda\EventBundle\Controller;
 
-use Symfony\Component\HttpFoundation\Request;
-
 use Yoda\EventBundle\Entity\Event;
 use Yoda\EventBundle\Form\EventType;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
