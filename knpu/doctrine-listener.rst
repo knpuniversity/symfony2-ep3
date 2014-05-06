@@ -370,6 +370,9 @@ we save the user, Doctrine does nothing.
 To fix the issue, let's nullify the ``password`` field manually whenever ``plainPassword``
 is set::
 
+    // src/Yoda/UserBundle/Entity/User.php
+    // ...
+
     public function setPlainPassword($plainPassword)
     {
         $this->plainPassword = $plainPassword;
