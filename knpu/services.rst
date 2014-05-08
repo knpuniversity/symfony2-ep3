@@ -267,7 +267,7 @@ it needs, it can get its work done.
 .. tip::
 
     To learn more, check out out free tutorial that's all about the great
-    topic of :doc:`Dependency Injection</screencast/dependency-injection/index>`.
+    topic of `Dependency Injection`_.
 
 In addition to "dependency injection", we've also just created our first "service".
 That's right - a "service" is nothing more than a term that's loosely given
@@ -567,3 +567,4 @@ If we scroll up a little bit we'll find our message:
     [2013-06-26 19:33:48] app.INFO Generating the recently updated events CSV!!! [] []
 
 .. _`Monolog`: https://github.com/Seldaek/monolog
+.. _`Dependency Injection`: http://knpuniversity.com/screencast/dependency-injection
