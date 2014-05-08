@@ -266,7 +266,7 @@ it needs, it can get its work done.
 
 .. tip::
 
-    To learn more, check out out free tutorial that's all about the great
+    To learn more, check out our free tutorial that's all about the great
     topic of `Dependency Injection`_.
 
 In addition to "dependency injection", we've also just created our first "service".
